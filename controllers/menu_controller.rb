@@ -132,9 +132,15 @@ class MenuController
 			system "clear"
 			puts "Input the specific entry you would like to see.\nExpected values are between 0-#{max - 1}:\n"
 			sel = gets.chomp.to_i
-			puts address_book.entries[sel].to_s
+			if sel < max
+				puts address_book.entries[sel].to_s
+			else
+				puts "try again man! Your input is not valid!"
+				view_specific_entry
+			end
 		else
-			puts "you've input something weird dude. Start again!"
+			puts "you've done something royally wrong. Start over!"
+
 		end
 	end
 end
