@@ -14,7 +14,8 @@ class MenuController
 		puts "2 - Create an entry"
 		puts "3 - Search for an entry"
 		puts "4 - Import entries from a CSV"
-		puts "5 - Exit"
+		puts "5 - Delete all entries"
+		puts "6 - Exit"
 		print "Enter your selection: "
 
 		# #3
@@ -37,8 +38,12 @@ class MenuController
 		when 4
 			system "clear"
 			read_csv
+		when 5 
+			system "clear"
+			implode
 			main_menu
-		when 5
+
+		when 6
 			puts "Good-bye!"
 			# #8
 			exit(0)
@@ -200,5 +205,11 @@ class MenuController
 			search_submenu(entry)
 		end
 	end
+
+	def implode
+		initialize
+	end
+
+
 
 end
